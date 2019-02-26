@@ -14,6 +14,7 @@ class SendMessage {
     const PHONE_PATTERN = '/^[0-9]{10}@/';
     const DEFAULT_PORT = 25;
     const DEFAULT_SEC = 'ssl'; //tls
+    const DEBUG = 0;
     public $encoding = "base64";
     public $type = "text/plain";
     protected $host;
@@ -113,7 +114,7 @@ class SendMessage {
       // Single thread each message to prevent group messages
       foreach($this->to as $to){
         $email = new phpmailer(true);
-        $email->SMTPDebug = 2;
+        $email->SMTPDebug = self::DEBUG;
         $email->isSMTP();
         $email->Host = $this->host;
         $email->Port = $this->port;
