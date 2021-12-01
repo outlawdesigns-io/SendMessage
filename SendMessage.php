@@ -198,7 +198,7 @@ class SendMessage {
         $this->password = trim($file[3]);
       }else{
         $this->host = $host;
-        $this->port = self::DEFAULT_PORT;
+        $this->port = $port;
         $this->username = $username;
         $this->password = $password;
       }
